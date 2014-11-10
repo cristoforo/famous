@@ -86,7 +86,12 @@ define(function(require, exports, module) {
      * @return {TextareaSurface} this, allowing method chaining.
      */
     TextareaSurface.prototype.setValue = function setValue(str) {
-        this._value = str;
+        if (this._currentTarget) {
+          this._currentTarget.value = str;
+        }
+        else {
+          this._value = str;
+        }
         this._contentDirty = true;
         return this;
     };
