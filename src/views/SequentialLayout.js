@@ -157,6 +157,7 @@ define(function(require, exports, module) {
         this._size[this.options.direction] = length;
 
         return {
+            opacity: parentSpec.opacity,
             transform: parentSpec.transform,
             origin: parentSpec.origin,
             size: this.getSize(),
