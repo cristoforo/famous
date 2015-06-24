@@ -83,7 +83,9 @@ define(function(require, exports, module) {
      * @param {Node} target document parent of this container
      */
     VideoSurface.prototype.deploy = function deploy(target) {
-        target.src = this._videoUrl;
+        if (this._videoUrl) {
+          target.src = this._videoUrl;
+        }
         target.autoplay = this.options.autoplay;
     };
 
